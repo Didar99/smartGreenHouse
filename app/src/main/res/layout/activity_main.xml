@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_400">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sensor_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/gray_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                card_view:cardCornerRadius="8dp"
+                card_view:cardElevation="0dp"
+                card_view:elevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="42dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sensor_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="18dp"
+                        android:paddingBottom="18dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:text="@string/app_name"
+                android:textColor="@color/blue_900"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/camera"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/camera" />
+
+            <ImageView
+                android:id="@+id/settings"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/panel"
+                android:padding="8dp"
+                android:src="@drawable/ic_round_settings_24"
+                android:contentDescription="@string/panel"
+                app:tint="@color/gray_800"
+                app:layout_constraintEnd_toEndOf="@id/sensor_panel"
+                app:layout_constraintTop_toTopOf="@+id/sensor_panel" />
+
+            <ImageView
+                android:id="@+id/camera"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_margin="12dp"
+                android:background="@drawable/panel"
+                android:contentDescription="@string/panel"
+                android:padding="8dp"
+                android:src="@drawable/ic_baseline_camera_24"
+                app:layout_constraintEnd_toStartOf="@+id/settings"
+                app:layout_constraintTop_toTopOf="@+id/sensor_panel"
+                app:tint="@color/gray_800" />
+
+<!--- second line -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/chart_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/gray_200"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sensor_panel"
+                card_view:cardCornerRadius="18dp"
+                card_view:cardElevation="0dp"
+                card_view:elevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <com.hadiidbouk.charts.ChartProgressBar
+                        android:id="@+id/ChartProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        app:hdBarCanBeClick="true"
+                        app:hdBarHeight="170dp"
+                        app:hdBarRadius="10dp"
+                        app:hdBarTitleColor="@color/bar_title_color"
+                        app:hdBarTitleMarginTop="9dp"
+                        app:hdBarTitleSelectedColor="@color/blue_900"
+                        app:hdBarTitleTxtSize="12sp"
+                        app:hdBarWidth="7dp"
+                        app:hdEmptyColor="@color/gray_400"
+                        app:hdMaxValue="40"
+                        app:hdPinBackgroundColor="@color/blue_200"
+                        app:hdPinDrawable="@drawable/ic_pin"
+                        app:hdPinMarginBottom="55dp"
+                        app:hdPinMarginEnd="22dp"
+                        app:hdPinMarginTop="10dp"
+                        app:hdPinPaddingBottom="5dp"
+                        app:hdPinTextColor="@color/white"
+                        app:hdPinTxtSize="17sp"
+                        app:hdProgressClickColor="@color/progress_click"
+                        app:hdProgressColor="@color/progress"
+                        app:hdProgressDisableColor="@color/progress_disable" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/diagram"
+                android:textColor="@color/blue_900"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/chart_panel"
+                app:layout_constraintTop_toTopOf="@+id/chart_panel" />
+
+            <!-- Third line -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/device_panel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/gray_200"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/chart_panel"
+                card_view:cardCornerRadius="18dp"
+                card_view:cardElevation="0dp"
+                card_view:elevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtDevices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginLeft="32dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="@string/devices"
+                        android:textColor="@color/blue_900"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <include layout="@layout/content_main"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.SettingsActivity">
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/ip_address"
+        android:textColor="@color/blue_200"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/prefix_url"
+        android:textColor="@color/blue_200"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txt"
+        app:layout_constraintTop_toBottomOf="@+id/editIP" />
+
+    <TextView
+        android:id="@+id/txtLoop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/loop"
+        android:textColor="@color/blue_200"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/txt2"
+        app:layout_constraintTop_toBottomOf="@+id/editPrefix" />
+
+    <EditText
+        android:id="@+id/editIP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@null"
+        android:hint="@string/ip"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="@color/blue_900"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt" />
+
+    <EditText
+        android:id="@+id/editPrefix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@null"
+        android:textColor="@color/blue_900"
+        android:hint="@string/write_prefix_here"
+        android:importantForAutofill="no"
+        android:inputType="textUri"
+        android:textSize="18sp"
+        android:textCursorDrawable="@drawable/cursor_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt2" />
+
+    <EditText
+        android:id="@+id/editLoop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:textColor="@color/blue_900"
+        android:background="@null"
+        android:hint="@string/sec"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textSize="18sp"
+        android:textCursorDrawable="@drawable/cursor_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtLoop" />
+
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="@string/version"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

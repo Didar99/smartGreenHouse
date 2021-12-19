@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Ýyladyşhana</string>
+    <string name="light">Çyra</string>
+    <string name="window">Penjire</string>
+    <string name="heater">Gyzdyryjy</string>
+    <string name="heater2">Gyzdyryjy 2</string>
+    <string name="heater3">Gyzdyryjy 3</string>
+    <string name="water_pump">Suw N.</string>
+    <string name="drop_pump">Damja N.</string>
+    <string name="panel">panel</string>
+    <string name="icon">icon</string>
+    <string name="degree">22</string>
+    <string name="percent">℃</string>
+    <string name="sensor_name">Temperatura</string>
+    <string name="sensor_num">17</string>
+    <string name="data_loading">Maglumatlar ýüklenilýär</string>
+    <string name="devices">Enjamlar</string>
+    <string name="ip_address">IP salgysy</string>
+    <string name="ip">198.168.43.18</string>
+    <string name="version">Wersiýa 1.0.9</string>
+    <string name="prefix_url">Goşundy (URL)</string>
+    <string name="loop">M. dolanyşyk (ms)</string>
+    <string name="write_prefix_here">şu_ýere_goşundy_ýaz</string>
+    <string name="sec">5000 ms = 5 sekunt</string>
+    <string name="success">Üstünlikli</string>
+    <string name="fit">Boşlugy dolduryň!</string>
+    <string name="save">Ýatda sakla</string>
+    <string name="no_internet">Internet baglanyşygy ýok</string>
+    <string name="diagram">Görkezijiler</string>
+</resources>
