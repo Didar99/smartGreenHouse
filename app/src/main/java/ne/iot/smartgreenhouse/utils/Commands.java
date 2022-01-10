@@ -40,7 +40,7 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
-                jsonParam.put("command", "parnik_room_light");
+                jsonParam.put("command", "parnik_light");
                 jsonParam.put("state", "1");
                 jsonParam.put("action", "");
                 Log.i("JSON", jsonParam.toString());
@@ -73,7 +73,7 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
-                jsonParam.put("command", "parnik_room_light");
+                jsonParam.put("command", "parnik_light");
                 jsonParam.put("state", "0");
                 jsonParam.put("action", "");
                 Log.i("JSON", jsonParam.toString());
@@ -176,12 +176,16 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
+                JSONObject json = new JSONObject();
+                JSONArray pin_array = new JSONArray();
                 jsonParam.put("command", "mode_low");
-                jsonParam.put("state", "1");
-                jsonParam.put("action", "");
-                Log.i("JSON", jsonParam.toString());
+                jsonParam.put("action", "1");
+                pin_array.put(jsonParam);
+                json.put("command", "parnik_conditioner_main");
+                json.put("pins", pin_array);
+                Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                os.writeBytes(json.toString());
                 os.flush();
                 os.close();
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -209,12 +213,16 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
+                JSONObject json = new JSONObject();
+                JSONArray pin_array = new JSONArray();
                 jsonParam.put("command", "mode_low");
-                jsonParam.put("state", "0");
-                jsonParam.put("action", "");
-                Log.i("JSON", jsonParam.toString());
+                jsonParam.put("action", "0");
+                pin_array.put(jsonParam);
+                json.put("command", "parnik_conditioner_main");
+                json.put("pins", pin_array);
+                Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                os.writeBytes(json.toString());
                 os.flush();
                 os.close();
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -244,12 +252,16 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
+                JSONObject json = new JSONObject();
+                JSONArray pin_array = new JSONArray();
                 jsonParam.put("command", "mode_med");
-                jsonParam.put("state", "1");
-                jsonParam.put("action", "");
-                Log.i("JSON", jsonParam.toString());
+                jsonParam.put("action", "1");
+                pin_array.put(jsonParam);
+                json.put("command", "parnik_conditioner_main");
+                json.put("pins", pin_array);
+                Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                os.writeBytes(json.toString());
                 os.flush();
                 os.close();
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -277,12 +289,16 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
+                JSONObject json = new JSONObject();
+                JSONArray pin_array = new JSONArray();
                 jsonParam.put("command", "mode_med");
-                jsonParam.put("state", "0");
-                jsonParam.put("action", "");
-                Log.i("JSON", jsonParam.toString());
+                jsonParam.put("action", "0");
+                pin_array.put(jsonParam);
+                json.put("command", "parnik_conditioner_main");
+                json.put("pins", pin_array);
+                Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                os.writeBytes(json.toString());
                 os.flush();
                 os.close();
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -312,12 +328,16 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
+                JSONObject json = new JSONObject();
+                JSONArray pin_array = new JSONArray();
                 jsonParam.put("command", "mode_high");
-                jsonParam.put("state", "1");
-                jsonParam.put("action", "");
-                Log.i("JSON", jsonParam.toString());
+                jsonParam.put("action", "1");
+                pin_array.put(jsonParam);
+                json.put("command", "parnik_conditioner_main");
+                json.put("pins", pin_array);
+                Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                os.writeBytes(json.toString());
                 os.flush();
                 os.close();
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -345,12 +365,16 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
+                JSONObject json = new JSONObject();
+                JSONArray pin_array = new JSONArray();
                 jsonParam.put("command", "mode_high");
-                jsonParam.put("state", "0");
-                jsonParam.put("action", "");
-                Log.i("JSON", jsonParam.toString());
+                jsonParam.put("action", "0");
+                pin_array.put(jsonParam);
+                json.put("command", "parnik_conditioner_main");
+                json.put("pins", pin_array);
+                Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                os.writeBytes(json.toString());
                 os.flush();
                 os.close();
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -385,7 +409,7 @@ public class Commands {
                 jsonParam.put("command", "auto_manual_switch");
                 jsonParam.put("action", "auto");
                 pin_array.put(jsonParam);
-                json.put("command", "command");
+                json.put("command", "parnik_conditioner_main");
                 json.put("pins", pin_array);
                 Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
@@ -417,12 +441,16 @@ public class Commands {
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
                 JSONObject jsonParam = new JSONObject();
+                JSONObject json = new JSONObject();
+                JSONArray pin_array = new JSONArray();
                 jsonParam.put("command", "auto_manual_switch");
-                jsonParam.put("state", "0");
-                jsonParam.put("action", "");
-                Log.i("JSON", jsonParam.toString());
+                jsonParam.put("action", "manual");
+                pin_array.put(jsonParam);
+                json.put("command", "parnik_conditioner_main");
+                json.put("pins", pin_array);
+                Log.i("JSON", json.toString());
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                os.writeBytes(json.toString());
                 os.flush();
                 os.close();
                 if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
